@@ -1,108 +1,206 @@
 # Como Estudar — Filosofia e Rotina do Homelab
 
-## A regra mais importante
+## 1. Filosofia de aprendizado
 
 > **Faça na mão primeiro. Quebre. Conserte. Entenda. Só depois automatize.**
 
-Nenhuma ferramenta de automação substitui entender o que está acontecendo por baixo. Se você não sabe fazer manualmente, não sabe depurar quando o script falha.
+O objetivo do laboratório é desenvolver conhecimentos práticos em infraestrutura, redes e cloud.
+
+A prioridade não é avançar rapidamente pelas fases, mas compreender o funcionamento das tecnologias, implementar soluções e desenvolver capacidade de troubleshooting.
+
+O laboratório deve acompanhar a rotina de estudos, não competir com a faculdade ou comprometer os períodos de descanso.
 
 ---
 
-## Rotina diária (~1h/dia)
+## 2. Organização do tempo
 
-| Dia | Foco |
-|---|---|
-| Segunda | Teoria do tópico da semana (vídeo/leitura, 20-30 min) + anotações |
-| Terça | Implementação prática no lab |
-| Quarta | Implementação prática (continuação) |
-| Quinta | Exercício de troubleshooting |
-| Sexta | Documentação (README, diagrama, commit) |
-| Sábado | Buffer — imprevistos ou adiantamento |
-| Domingo | Revisão leve ou descanso |
+O homelab é desenvolvido em paralelo à graduação em Tecnologia de Redes de Computadores e às demais responsabilidades da rotina.
 
-**Regra de ouro:** se uma fase prevista para 2 semanas levar 3, não tem problema.
-Profundidade importa mais que velocidade.
+Por isso, não existe obrigação de estudar todos os dias.
 
----
+### Rotina semanal sugerida
 
-## Como estudar teoria
+| Período | Atividade | Tempo |
+|---|---|---|
+| 2 dias durante a semana | Implementação prática no laboratório | 60–90 min |
+| 1 dia durante a semana | Teoria, revisão ou troubleshooting | 30–60 min |
+| Sábado | Reserva para pendências ou atividades adicionais | Opcional |
+| Domingo | Descanso | Livre |
 
-- Assista o suficiente para entender **o que vai fazer e por quê** — não para "dominar o assunto"
-- Pause o vídeo e refaça os exemplos na mão
-- Anote dúvidas para resolver na prática, não antes
-- O entendimento real vem da prática, não da leitura
+Os dias podem ser ajustados conforme a carga de atividades da faculdade e os compromissos pessoais.
 
----
+### Prioridade dos estudos
 
-## Como documentar
+1. **Faculdade:** provas, trabalhos, PTIs e atividades com prazo.
+2. **Homelab:** continuidade dos projetos práticos de infraestrutura e redes.
+3. **Estudos complementares:** livros, cursos e aprofundamento em tecnologias relacionadas.
 
-Documente **enquanto faz**, não depois. A documentação tem três funções:
+Durante semanas de avaliações ou entregas importantes, o ritmo do homelab poderá ser reduzido.
 
-1. **Portfólio** — recrutadores vão ler isso
-2. **Referência futura** — você mesmo vai consultar quando esquecer
-3. **Consolidação** — explicar por escrito força você a entender de verdade
+Não é necessário compensar todas as horas posteriormente.
 
-### O que sempre documentar
-- O que você fez e por quê (não só o comando, mas a decisão)
-- O que não funcionou e como resolveu
-- O que aprendeu que não estava no tutorial
+### Regra de continuidade
 
-### O que nunca fazer
-- Copiar e colar tutorial sem entender
-- Documentar só o que funcionou (os erros são a parte mais valiosa)
-- Commitar tudo de uma vez no final da fase
+- Duas sessões produtivas na semana já representam um bom avanço.
+- Uma semana mais tranquila pode permitir atividades adicionais.
+- Uma semana mais ocupada pode ter apenas uma sessão.
+- Pausas não significam abandonar o projeto.
+
+**A consistência deve ser medida pela evolução ao longo dos meses, não pela quantidade de dias estudados.**
 
 ---
 
-## Como usar o Git no dia a dia
+## 3. Como estudar teoria
 
-- **Commit ao fim de cada sessão de estudo** — mesmo que seja só documentação
-- **Mensagem descritiva** sempre: `Configura IP estático na NET-A e valida conectividade`
-- **Nunca commitar credenciais, senhas ou chaves** — use `.gitignore`
-- **Commit frequente** prova que o projeto foi feito ao longo do tempo, não numa noite
+A teoria deve preparar para a prática, e não se tornar uma atividade interminável.
 
----
+- Estude o necessário para compreender o que será implementado.
+- Procure entender por que determinada configuração é utilizada.
+- Refaça exemplos e comandos em seu próprio ambiente.
+- Anote dúvidas que possam ser investigadas durante a implementação.
+- Consulte documentação oficial quando necessário.
 
-## Como fazer troubleshooting
+Evite consumir muitos tutoriais sobre o mesmo assunto sem colocar o conhecimento em prática.
 
-Quando algo não funciona, siga sempre essa ordem:
-
-1. **Qual é o sintoma exato?** (mensagem de erro, comportamento observado)
-2. **O que mudou antes do problema aparecer?**
-3. **Isole a variável** — teste uma coisa de cada vez
-4. **Verifique camada por camada** (física → rede → transporte → aplicação)
-5. **Leia os logs** — o sistema sempre deixa rastro
-6. **Documente a causa raiz**, não só a solução
+O objetivo é conseguir implementar e explicar o funcionamento da tecnologia estudada.
 
 ---
 
-## Como saber que realmente concluiu uma fase
+## 4. Como desenvolver os projetos
 
-Não é "li sobre o assunto". É:
+O aprendizado será organizado por projetos práticos, que poderão crescer conforme novas tecnologias forem estudadas.
 
-- [ ] Implementei e está funcionando
-- [ ] Quebrei de propósito e consertei
-- [ ] Sei explicar o que fiz e por quê, sem consultar nada
-- [ ] Documentei no GitHub com diagrama e problemas encontrados
-- [ ] Completei o checklist da fase
+Exemplo: projeto de rede segmentada por VLANs.
 
----
+1. Planejar a topologia.
+2. Montar o ambiente no Packet Tracer.
+3. Configurar os dispositivos.
+4. Validar a comunicação entre as redes.
+5. Simular problemas e investigar as causas.
+6. Documentar a implementação e os resultados.
 
-## Gestão das VMs
+Cada etapa deve aproveitar os conhecimentos anteriores.
 
-- **Snapshot** após cada configuração funcional importante
-- **Nunca delete** uma VM sem exportar `.ova` antes
-- **Mantenha o inventário** de IPs atualizado em `docs/00-virtualizacao/topologia.md`
-- **Desligue VMs** que não está usando — economiza RAM e prolonga o SSD
+Não é necessário concluir todo o projeto em uma única semana. Ele poderá ser desenvolvido em várias sessões.
 
 ---
 
-## Mensagem para o futuro você
+## 5. Como documentar
 
-Você vai travar. Vai ter dias que nada funciona. Isso é normal e é exatamente onde o aprendizado real acontece.
+A documentação deve ser produzida durante o desenvolvimento dos projetos, sem transformar cada sessão em uma obrigação de escrever relatórios extensos.
 
-A diferença entre quem consegue a vaga e quem não consegue não é talento — é consistência. Uma hora por dia, todo dia, por 18-24 meses, constrói uma base que nenhuma certificação isolada substitui.
+O GitHub tem três objetivos:
 
-Cada problema que você resolve sozinho é uma história que você conta em entrevista. Cada incident report que você documenta é prova de que você pensa como profissional, não como estudante.
+1. **Portfólio:** demonstrar conhecimentos e projetos desenvolvidos.
+2. **Referência:** registrar configurações e procedimentos para consultas futuras.
+3. **Aprendizado:** consolidar o conhecimento explicando o que foi implementado.
 
-Continue.
+### O que registrar
+
+- O que foi implementado e por quê.
+- Tecnologias e configurações utilizadas.
+- Testes realizados e resultados obtidos.
+- Problemas encontrados e como foram investigados.
+- Decisões técnicas importantes.
+
+### O que evitar
+
+- Copiar tutoriais sem compreender.
+- Documentar informações que não foram validadas.
+- Repetir explicações teóricas em vários arquivos.
+- Criar documentação extensa sem necessidade.
+- Registrar senhas, tokens, chaves ou outras informações sensíveis.
+
+A documentação deve ser suficiente para que outra pessoa compreenda o projeto e consiga reproduzir os principais procedimentos.
+
+---
+
+## 6. Como utilizar o Git e o GitHub
+
+O Git será utilizado para acompanhar a evolução do laboratório.
+
+Boas práticas:
+
+- Realizar commits após alterações relevantes.
+- Utilizar mensagens curtas e descritivas.
+- Separar alterações de assuntos diferentes quando possível.
+- Manter o README e o roadmap atualizados.
+- Nunca enviar credenciais ou informações sensíveis.
+- Revisar os arquivos antes de publicar alterações.
+
+Exemplos de mensagens:
+
+```text
+Adiciona configuração de VLANs no Packet Tracer
+Documenta implementação de trunk 802.1Q
+Atualiza topologia da rede virtual
+Documenta testes de conectividade entre VLANs
+Corrige informações sobre endereçamento IP
+```
+
+Não é necessário realizar um commit em toda sessão. O importante é manter um histórico organizado das alterações efetivamente realizadas.
+
+---
+
+## 7. Como fazer troubleshooting
+
+Quando algo não funcionar, utilizar uma sequência estruturada de investigação.
+
+1. **Identificar o sintoma:** qual comportamento foi observado?
+2. **Verificar alterações recentes:** o que mudou antes do problema?
+3. **Formular hipóteses:** quais causas podem explicar o comportamento?
+4. **Isolar variáveis:** testar uma hipótese por vez.
+5. **Investigar por camadas:** verificar conectividade, endereçamento, roteamento, portas e aplicação conforme o problema.
+6. **Consultar logs:** procurar evidências que ajudem a identificar a causa.
+7. **Validar a solução:** repetir os testes após a correção.
+8. **Registrar o aprendizado:** documentar a causa raiz e como o problema foi resolvido.
+
+Evite alterar várias configurações simultaneamente sem saber qual delas está relacionada ao problema.
+
+O objetivo é desenvolver raciocínio técnico, não apenas encontrar comandos que façam o ambiente funcionar.
+
+---
+
+## 8. Gestão do laboratório e das máquinas virtuais
+
+Alguns cuidados para preservar o ambiente:
+
+- Criar snapshots antes de alterações importantes.
+- Identificar e documentar as configurações relevantes das VMs.
+- Manter o inventário de máquinas, endereços IP e redes atualizado.
+- Desligar máquinas virtuais que não estão sendo utilizadas.
+- Verificar o espaço disponível antes de criar snapshots ou exportações.
+- Manter backups dos dados importantes.
+
+Snapshots ajudam a retornar a estados anteriores, mas não substituem backups.
+
+Antes de excluir uma VM, verificar se existem dados ou configurações importantes que precisam ser preservados.
+
+---
+
+## 9. Critérios para concluir uma fase
+
+Uma fase não será considerada concluída apenas por ter sido estudada teoricamente.
+
+Sempre que aplicável, verificar:
+
+- [ ] O ambiente ou recurso foi implementado.
+- [ ] Os testes de funcionamento foram realizados.
+- [ ] Consigo explicar as principais configurações.
+- [ ] Consegui investigar e resolver problemas.
+- [ ] A documentação apresenta o que foi desenvolvido.
+- [ ] Os principais objetivos da fase foram alcançados.
+
+Não é necessário dominar completamente uma tecnologia para avançar. O importante é possuir uma base prática consistente e saber identificar o que ainda precisa ser aprofundado.
+
+---
+
+## 10. Orientação geral
+
+O homelab é um projeto de longo prazo.
+
+Algumas fases serão mais rápidas, enquanto outras exigirão semanas de implementação e troubleshooting.
+
+A evolução não deve ser medida pela quantidade de tecnologias estudadas, mas pela capacidade de construir, administrar, investigar e compreender ambientes de infraestrutura.
+
+**Estudar com consistência, respeitando o tempo disponível, é mais importante do que tentar cumprir uma rotina impossível.
